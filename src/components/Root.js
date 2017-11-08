@@ -1,10 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import App from './App'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const Root = ({ store }) => (
 	<Provider store={store}>
-		<App />
+	    <Router>
+		    <div>
+		    	<Route exact path='/' component={ App }/>
+	        	<Route path="/:filter" component={ App }/>
+	        </div>
+    	</Router>
 	</Provider>
 );
 

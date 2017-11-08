@@ -11,7 +11,7 @@ const configureStore = () => {
 		todoApp,
 		persistedState
 	);
-	console.log(store.getState());
+	//console.log(store.getState());
 
 	store.subscribe(throttle(() => {
 	  saveState({
