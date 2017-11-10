@@ -5,9 +5,9 @@ import VisibleTodoList from '../containers/VisibleTodoList'
 
 const App = (props) => {
 
-	console.log("props.match.params.filter: " + props.match.params.filter)
+	/*console.log("props.match.params.filter: " + props.match.params.filter)
 	console.log("props.match: " + props.match)
-	console.log(props.match)
+	console.log(props.match)*/
 	
 	return (
 	  <div>

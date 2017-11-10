@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom'
 
 const FilterLink = ({ filter, children }) => {
 
-	console.log("filter: "+filter);
-	console.log("children: "+children);
+/*	console.log("filter: "+filter);
+	console.log("children: "+children);*/
 
 	return (
 	  <NavLink

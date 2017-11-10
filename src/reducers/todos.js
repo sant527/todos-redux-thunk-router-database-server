@@ -38,7 +38,7 @@ const getAllTodos = (state) =>
 
 export const getVisibleTodos = (state, filter) => {
   const allTodos = getAllTodos(state);
-  console.log('getVisibleTodos filter: ' + filter)
+/*  console.log('getVisibleTodos filter: ' + filter)*/
   switch (filter) {
     case 'all':
       return allTodos
