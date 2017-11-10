@@ -1,6 +1,5 @@
 import { createStore } from 'redux'
 import todoApp from './reducers'
-import { fetchTodos } from './api'
 
 const addLoggingToDispatch = (store) => {
   const rawDispatch = store.dispatch;
@@ -17,10 +16,6 @@ const addLoggingToDispatch = (store) => {
     return returnValue;
   }
 }
-
-fetchTodos('all').then(todos =>
-  console.log(todos)
-);
 
 const configureStore = () => {
 
