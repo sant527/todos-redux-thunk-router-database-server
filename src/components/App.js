@@ -12,9 +12,7 @@ const App = (props) => {
 	return (
 	  <div>
 	    <AddTodo />
-	    <VisibleTodoList 
-	    	filter={props.match.params.filter || 'all'}
-	    />
+	    <VisibleTodoList />
 	    <Footer />
 	  </div>
 	)
