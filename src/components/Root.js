@@ -1,15 +1,21 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import App from './App'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+
+import { ConnectedRouter } from 'react-router-redux'
+
+import createHistory from 'history/createBrowserHistory'
+export const history = createHistory();
+
 
 const Root = ({ store }) => (
 	<Provider store={store}>
-	    <Router>
+	    <ConnectedRouter history={history}>
 		    <div>
 	        	<Route path="/:filter?" component={ App }/>
 	        </div>
-    	</Router>
+    	</ConnectedRouter>
 	</Provider>
 );
 
