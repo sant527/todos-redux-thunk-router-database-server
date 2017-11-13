@@ -6,7 +6,7 @@ import { getIsFetching } from '../reducers'
 export const addTodo = (text) => (dispatch) =>
   api.addTodo(text).then(response => {
     console.log(
-      'normalized response',
+      'normalized response addTodo',
       normalize(response,schema.todo)
 
     )
@@ -17,10 +17,17 @@ export const addTodo = (text) => (dispatch) =>
 
   })
 
-export const toggleTodo = (id) => ({
-  type: 'TOGGLE_TODO',
-  id
-})
+export const toggleTodo = (id) => (dispatch) =>
+  api.toggleTodo(id).then(response => {
+    console.log(
+      'normalized response toggleTodo',
+      normalize(response,schema.todo)
+    )
+    dispatch({
+      type: 'TOGGLE_TODO_SUCCESS',
+      response: normalize(response,schema.todo)
+    })
+  })
 
 export const fetchTodos = (filter) => (dispatch,getState) => {
   if(getIsFetching(getState(),filter)) {
@@ -34,7 +41,7 @@ export const fetchTodos = (filter) => (dispatch,getState) => {
   return api.fetchTodos(filter).then(
     response => {
         console.log(
-          'normalized response',
+          'normalized response fetchTodos',
           normalize(response, schema.arrayOfTodos)
         )
         dispatch({
