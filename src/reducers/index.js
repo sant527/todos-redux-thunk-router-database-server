@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import byId, * as fromById from './byId'
 import createList, * as fromList from './createList'
+import { routerReducer } from 'react-router-redux'
 
 const listByFilter = combineReducers({
   all: createList('all'),
@@ -11,6 +12,7 @@ const listByFilter = combineReducers({
 const todos = combineReducers({
   byId,
   listByFilter,
+  reducer: routerReducer
 });
 
 export default todos
